@@ -306,11 +306,35 @@ variable "COGNITO_CLIENT_EXPLICIT_AUTH_FLOWS" {
   default     = null
 }
 
-########################### COGNITO DOMAIN VARIABLES ###########################
+########################### COGNITO DOMAIN VARIABLE ############################
 
 variable "COGNITO_DOMAIN" {
   description = "To use if your domain is NOT custom. It will conflict with var.AMAZON_COGNITO_CUSTOM_DOMAIN"
   type        = string
+}
+
+######################### COGNITO USER GROUP VARIABLE ##########################
+
+variable "COGNITO_USER_GROUP_ATTRIBUTES_LIST" {
+  description = "Attributes list for each cognito user group resource"
+  type = list(any)
+}
+
+################# COGNITO USER AND GROUP ASSOCIATION VARIABLES #################
+
+variable "COGNITO_USERNAME" {
+  description = "The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128 characters. After the user is created, the username cannot be changed"
+  type        = string
+}
+
+variable "COGNITO_USER_PASSWORD" {
+  description = "The user's permanent password. This password must conform to the password policy specified by user pool the user belongs to. The welcome message always contains only temporary_password value. You can suppress sending the welcome message with the message_action argument. Amazon Cognito does not store the password value. Conflicts with temporary_password"
+  type        = string
+}
+
+variable "COGNITO_GROUPS_TO_ASSOCIATE_USER_TO" {
+  description = "Group list for user association"
+  type        = list(string)
 }
 
 ############################### TAGS VARIABLES #################################

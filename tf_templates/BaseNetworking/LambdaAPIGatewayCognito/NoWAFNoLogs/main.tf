@@ -120,6 +120,23 @@ module "cognito_domain" {
   AMAZON_COGNITO_DOMAIN = var.COGNITO_DOMAIN
 }
 
+module "cognito_user_groups" {
+  source = "7clouds-terraform-modules/cognito-user-group/aws"
+
+  USER_POOL_ID = module.cognito_user_pool.USER_POOL_ID
+  USER_GROUP_ATTRIBUTES_LIST = var.COGNITO_USER_GROUP_ATTRIBUTES_LIST
+}
+
+module "cognito-user-and-group-association" {
+  source  = "7clouds-terraform-modules/cognito-user-and-group-association/aws"
+  version = "0.1.0"
+
+  USER_POOL_ID = module.cognito_user_pool.USER_POOL_ID
+  USER_NAME = var.COGNITO_USERNAME
+  USER_PASSWORD = var.COGNITO_USER_PASSWORD
+  GROUP_LIST = var.COGNITO_GROUPS_TO_ASSOCIATE_USER_TO
+}
+
 module "tags" {
   source  = "7clouds-terraform-modules/tags/aws"
   version = "0.1.0"
