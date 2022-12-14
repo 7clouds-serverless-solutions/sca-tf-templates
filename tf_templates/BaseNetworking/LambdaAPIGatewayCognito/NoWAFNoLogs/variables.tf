@@ -317,7 +317,7 @@ variable "COGNITO_DOMAIN" {
 
 variable "COGNITO_USER_GROUP_ATTRIBUTES_LIST" {
   description = "Attributes list for each cognito user group resource"
-  type = list(any)
+  type        = list(any)
 }
 
 ################# COGNITO USER AND GROUP ASSOCIATION VARIABLES #################
