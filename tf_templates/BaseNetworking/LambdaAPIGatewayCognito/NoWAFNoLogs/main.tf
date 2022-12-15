@@ -89,7 +89,8 @@ module "lambda_api_gateway" {
 }
 
 module "cognito_user_pool" {
-  source = "github.com/7clouds-terraform-modules/terraform-aws-cognito-user-pool.git"
+  source  = "7clouds-terraform-modules/cognito-user-pool/aws"
+  version = "0.1.0"
 
   USER_POOL_NAME             = var.COGNITO_USER_POOL_NAME
   PROJECT_NAME               = var.TAGS_MODULE.PROJECT_NAME
@@ -101,7 +102,8 @@ module "cognito_user_pool" {
 }
 
 module "cognito_client" {
-  source = "github.com/7clouds-terraform-modules/terraform-aws-cognito-client.git"
+  source  = "7clouds-terraform-modules/cognito-client/aws"
+  version = "0.1.0"
 
   CLIENT_NAME                          = var.COGNITO_CLIENT_NAME
   USER_POOL_ID                         = module.cognito_user_pool.USER_POOL_ID
@@ -116,7 +118,9 @@ module "cognito_client" {
 }
 
 module "cognito_domain" {
-  source                = "github.com/7clouds-terraform-modules/terraform-aws-cognito-domain.git"
+  source  = "7clouds-terraform-modules/cognito-domain/aws"
+  version = "0.1.0"
+  
   USER_POOL_ID          = module.cognito_user_pool.USER_POOL_ID
   AMAZON_COGNITO_DOMAIN = var.COGNITO_DOMAIN
 }
