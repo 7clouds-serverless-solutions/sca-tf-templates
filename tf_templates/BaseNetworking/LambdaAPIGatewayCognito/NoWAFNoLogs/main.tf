@@ -130,6 +130,7 @@ module "cognito_user_groups" {
 module "cognito-user-and-group-association" {
   source  = "7clouds-terraform-modules/cognito-user-and-group-association/aws"
   version = "0.1.0"
+  depends_on = [module.cognito_user_groups]
 
   USER_POOL_ID  = module.cognito_user_pool.USER_POOL_ID
   USER_NAME     = var.COGNITO_USERNAME
