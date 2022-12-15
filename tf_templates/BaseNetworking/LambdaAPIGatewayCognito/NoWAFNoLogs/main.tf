@@ -127,7 +127,7 @@ module "cognito_user_groups" {
   USER_GROUP_ATTRIBUTES_LIST = var.COGNITO_USER_GROUP_ATTRIBUTES_LIST
 }
 
-module "cognito-user-and-group-association" {
+module "cognito_user_and_group_association" {
   source  = "7clouds-terraform-modules/cognito-user-and-group-association/aws"
   version = "0.1.0"
   depends_on = [module.cognito_user_groups]
