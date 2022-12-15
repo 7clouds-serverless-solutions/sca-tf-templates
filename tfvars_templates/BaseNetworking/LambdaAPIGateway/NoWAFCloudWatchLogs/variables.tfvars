@@ -1,11 +1,11 @@
-COMPATIBLE_RUNTIMES_DEPENDENCIES_LAYER = "python3.8"
-LAYER_NAME_DEPENDENCIES_LAYER          = "TestProjectDependenciesLayer"
-DESCRIPTION_DEPENDENCIES_LAYER         = "Python Flask Dependencies for a Simple API"
-FILENAME_DEPENDENCIES_LAYER            = "YOUR_PATH_HERE"
-POLICY_ACTION_CONTENT_BUCKET_ALLOW = ["s3:*"]
-POLICY_EFFECT_CONTENT_BUCKET_ALLOW = "Allow"
-POLICY_NAME_CONTENT_BUCKET_ALLOW = "content-bucket-access"
-POLICY_DESCRIPTION_CONTENT_BUCKET_ALLOW = "Policy to allow access of the content bucket to the Lambda Function"
+COMPATIBLE_RUNTIMES_DEPENDENCIES_LAYER            = "python3.8"
+LAYER_NAME_DEPENDENCIES_LAYER                     = "TestProjectDependenciesLayer"
+DESCRIPTION_DEPENDENCIES_LAYER                    = "Python Flask Dependencies for a Simple API"
+FILENAME_DEPENDENCIES_LAYER                       = "YOUR_PATH_HERE"
+POLICY_ACTION_CONTENT_BUCKET_ALLOW                = ["s3:*"]
+POLICY_EFFECT_CONTENT_BUCKET_ALLOW                = "Allow"
+POLICY_NAME_CONTENT_BUCKET_ALLOW                  = "content-bucket-access"
+POLICY_DESCRIPTION_CONTENT_BUCKET_ALLOW           = "Policy to allow access of the content bucket to the Lambda Function"
 CREATE_CONTENT_MANAGEMENT_BUCKET                  = true
 CONTENT_MANAGEMENT_BUCKET_NAME                    = "content-management-bucket"
 CONTENT_MANAGEMENT_BUCKET_FORCE_DESTROY           = true
@@ -22,12 +22,12 @@ CONTENT_MANAGEMENT_BUCKET_SERVER_SIDE_ENCRYPTION_CONFIGURATION = {
   }
 }
 CONTENT_MANAGEMENT_BUCKET_VERSIONING = {
-    versioning = true
-    status     = "Enabled"
+  versioning = true
+  status     = "Enabled"
 }
-API_GATEWAY_RESOURCE_PATH_LAMBDA_API   = "{proxy+}"
-COMPATIBLE_RUNTIMES_LAMBDA_API         = "python3.8"
-LAMBDA_CODE_ZIP_FILE_LAMBDA_API        = "YOUR_PATH_HERE"
+API_GATEWAY_RESOURCE_PATH_LAMBDA_API             = "{proxy+}"
+COMPATIBLE_RUNTIMES_LAMBDA_API                   = "python3.8"
+LAMBDA_CODE_ZIP_FILE_LAMBDA_API                  = "YOUR_PATH_HERE"
 WARMUP_ENABLED_LAMBDA_API                        = true
 LAMBDA_WARMUP_SCHEDULE_EXPRESSION_LAMBDA_API     = "rate(5 minutes)"
 MEMORY_SIZE_LAMBDA_API                           = 128

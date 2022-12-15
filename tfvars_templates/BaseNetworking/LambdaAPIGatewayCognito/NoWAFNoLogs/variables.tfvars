@@ -131,56 +131,57 @@ PRIVATE_SUBNET_ACL_RULE_EGRESS_LIST_BASE_NETWORKING = [
   }
 ]
 
-COGNITO_USER_POOL_NAME = "user-pool-example"
-COGNITO_USER_POOL_VERIFICATION_MESSAGE = "Your verification code is {####}."
+COGNITO_USER_POOL_NAME                       = "user-pool-example"
+COGNITO_USER_POOL_VERIFICATION_MESSAGE       = "Your verification code is {####}."
 COGNITO_USER_POOL_EMAIL_VERIFICATION_SUBJECT = "Your verification code"
-COGNITO_USER_POOL_ADMIN_CREATE_USER_CONFIG = [ {
-    allow_admin_create_user_only = true
-    email_message = "Your username is {username} and temporary password is {####}."
-    email_subject = "Your verification code"
-    sms_message = "Your username is {username} and temporary password is {####}."
-  } ]
+COGNITO_USER_POOL_ADMIN_CREATE_USER_CONFIG = [{
+  allow_admin_create_user_only = true
+  email_message                = "Your username is {username} and temporary password is {####}."
+  email_subject                = "Your verification code"
+  sms_message                  = "Your username is {username} and temporary password is {####}."
+}]
 
-COGNITO_USER_POOL_PASSWORD_POLICY =  [ {
-    minimum_length = 8
-    require_lowercase = false
-    require_numbers = false
-    require_symbols = false
-    require_uppercase = false
-    temporary_password_validity_days = 1
-  } ]
+COGNITO_USER_POOL_PASSWORD_POLICY = [{
+  minimum_length                   = 8
+  require_lowercase                = false
+  require_numbers                  = false
+  require_symbols                  = false
+  require_uppercase                = false
+  temporary_password_validity_days = 1
+}]
 
-COGNITO_CLIENT_NAME = "cognito-client-example"
-COGNITO_CLIENT_SUPPORTED_IDENTITY_PROVIDERS = ["COGNITO"]
-COGNITO_CLIENT_ALLOWED_OAUTH_FLOWS = ["implicit"]
-COGNITO_CLIENT_ALLOWED_OAUTH_SCOPES = ["openid", "profile"]
-COGNITO_CLIENT_CALLBACK_URLS = ["https://localhost:5000/callback"]
-COGNITO_CLIENT_LOGOUT_URLS = ["https://localhost:5000/sign-out"]
-COGNITO_CLIENT_GENERATE_SECRET = false
-COGNITO_CLIENT_EXPLICIT_AUTH_FLOWS = ["ALLOW_ADMIN_USER_PASSWORD_AUTH", "ALLOW_REFRESH_TOKEN_AUTH"]
+COGNITO_CLIENT_NAME                          = "cognito-client-example"
+COGNITO_CLIENT_SUPPORTED_IDENTITY_PROVIDERS  = ["COGNITO"]
+COGNITO_CLIENT_ALLOWED_OAUTH_FLOWS           = ["implicit"]
+COGNITO_CLIENT_ALLOWED_OAUTH_SCOPES          = ["openid", "profile"]
+COGNITO_CLIENT_CALLBACK_URLS                 = ["https://localhost:5000/callback"]
+COGNITO_CLIENT_LOGOUT_URLS                   = ["https://localhost:5000/sign-out"]
+COGNITO_CLIENT_GENERATE_SECRET               = false
+COGNITO_CLIENT_EXPLICIT_AUTH_FLOWS           = ["ALLOW_ADMIN_USER_PASSWORD_AUTH", "ALLOW_REFRESH_TOKEN_AUTH"]
+COGNITO_ALLOWED_OAUTH_FLOWS_USER_POOL_CLIENT = true
 
 COGNITO_DOMAIN = "example-domain-testing"
 
-COGNITO_USER_GROUP_ATTRIBUTES_LIST  = [
-    {
-        name         = "admin"
-        description  = null
-        precedence   = 0 
-        role_arn     = null
-    },
-    {
-        name         = "write"
-        description  = null
-        precedence   = 1 
-        role_arn     = null
-    },
-    {
-        name         = "read"
-        description  = null
-        precedence   = 2 
-        role_arn     = null
-    },
-  ]
+COGNITO_USER_GROUP_ATTRIBUTES_LIST = [
+  {
+    name        = "admin"
+    description = null
+    precedence  = 0
+    role_arn    = null
+  },
+  {
+    name        = "write"
+    description = null
+    precedence  = 1
+    role_arn    = null
+  },
+  {
+    name        = "read"
+    description = null
+    precedence  = 2
+    role_arn    = null
+  },
+]
 
 COGNITO_USERNAME                    = "admin"
 COGNITO_USER_PASSWORD               = "yourpasshere"

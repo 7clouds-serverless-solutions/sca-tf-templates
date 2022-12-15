@@ -1,6 +1,6 @@
 module "base_networking" {
-  source                               = "7clouds-terraform-modules/base-networking/aws"
-  version                              = "0.1.2"
+  source  = "7clouds-terraform-modules/base-networking/aws"
+  version = "0.1.2"
 
   PROJECT_NAME                         = var.TAGS_MODULE.PROJECT_NAME
   AZ_COUNT                             = var.AZ_COUNT_BASE_NETWORKING
@@ -13,8 +13,8 @@ module "base_networking" {
 }
 
 module "dependencies_layer" {
-  source              = "7clouds-terraform-modules/lambda-layer/aws"
-  version             = "0.1.0"
+  source  = "7clouds-terraform-modules/lambda-layer/aws"
+  version = "0.1.0"
 
   COMPATIBLE_RUNTIMES = var.COMPATIBLE_RUNTIMES_DEPENDENCIES_LAYER
   LAYER_NAME          = var.LAYER_NAME_DEPENDENCIES_LAYER
@@ -26,7 +26,7 @@ module "cloudwatch_disable_policy" {
   source  = "7clouds-terraform-modules/iam-policy/aws"
   version = "0.1.0"
 
-  POLICY_ACTION = var.POLICY_ACTION_CLOUDWATCH_DISABLE
+  POLICY_ACTION      = var.POLICY_ACTION_CLOUDWATCH_DISABLE
   POLICY_EFFECT      = var.POLICY_EFFECT_CLOUDWATCH_DISABLE
   POLICY_RESOURCE    = var.POLICY_RESOURCE_CLOUDWATCH_DISABLE
   POLICY_NAME        = var.POLICY_NAME_CLOUDWATCH_DISABLE
@@ -63,9 +63,9 @@ module "content_management_bucket" {
 }
 
 module "logging_layers" {
-  source              = "7clouds-terraform-modules/lambda-layer/aws"
-  version             = "0.1.0"
-  
+  source  = "7clouds-terraform-modules/lambda-layer/aws"
+  version = "0.1.0"
+
   COMPATIBLE_RUNTIMES = var.COMPATIBLE_RUNTIMES_LOGGING_LAYER
   LAYER_NAME          = var.LAYER_NAME_LOGGING_LAYER
   DESCRIPTION         = var.DESCRIPTION_LOGGING_LAYER
@@ -91,9 +91,9 @@ module "logs_bucket" {
 }
 
 module "centralized_logs" {
-  source                                               = "7clouds-terraform-modules/lambda-centralized-logs/aws"
-  version                                              = "0.1.1"
-  depends_on                                           = [module.logs_bucket]
+  source     = "7clouds-terraform-modules/lambda-centralized-logs/aws"
+  version    = "0.1.1"
+  depends_on = [module.logs_bucket]
 
   PROJECT_NAME                                         = module.tags.PROJECT_NAME
   LOGS_BUCKET_NAME                                     = module.logs_bucket.CONTENT_BUCKET
@@ -113,8 +113,8 @@ module "centralized_logs" {
 }
 
 module "lambda_api_gateway" {
-  source                              = "7clouds-terraform-modules/lambda-api-gateway/aws"
-  version                             = "0.1.3"
+  source  = "7clouds-terraform-modules/lambda-api-gateway/aws"
+  version = "0.1.3"
 
   PROJECT_NAME                        = var.TAGS_MODULE.PROJECT_NAME
   ENVIRONMENT                         = var.TAGS_MODULE.ENVIRONMENT
@@ -130,8 +130,8 @@ module "lambda_api_gateway" {
   MEMORY_SIZE                         = var.MEMORY_SIZE_LAMBDA_API
   TIMEOUT                             = var.TIMEOUT_LAMBDA_API
   HANDLER                             = var.HANDLER_LAMBDA_API
-  ENVIRONMENT_VARIABLES               = merge({FIREHOSE_STREAM_NAME = module.centralized_logs.KINESIS_FIREHOSE_DELIVERY_STREAM_NAME, content_bucket = module.content_management_bucket.CONTENT_BUCKET}, var.ENVIRONMENT_VARIABLES_LAMBDA_API)
-  MANAGED_POLICY_ARNS = [module.cloudwatch_disable_policy.IAM_POLICY_ARN, module.content_bucket_allow_policy.IAM_POLICY_ARN]
+  ENVIRONMENT_VARIABLES               = merge({ FIREHOSE_STREAM_NAME = module.centralized_logs.KINESIS_FIREHOSE_DELIVERY_STREAM_NAME, content_bucket = module.content_management_bucket.CONTENT_BUCKET }, var.ENVIRONMENT_VARIABLES_LAMBDA_API)
+  MANAGED_POLICY_ARNS                 = [module.cloudwatch_disable_policy.IAM_POLICY_ARN, module.content_bucket_allow_policy.IAM_POLICY_ARN]
   API_GATEWAY_METHOD_AUTHORIZATION    = var.API_GATEWAY_METHOD_AUTHORIZATION_LAMBDA_API
   API_GATEWAY_METHOD_HTTP_METHOD      = var.API_GATEWAY_METHOD_HTTP_METHOD_LAMBDA_API
   API_GATEWAY_INTEGRATION_HTTP_METHOD = var.API_GATEWAY_INTEGRATION_HTTP_METHOD_LAMBDA_API
@@ -139,8 +139,8 @@ module "lambda_api_gateway" {
 }
 
 module "tags" {
-  source          = "7clouds-terraform-modules/tags/aws"
-  version         = "0.1.0"
+  source  = "7clouds-terraform-modules/tags/aws"
+  version = "0.1.0"
 
   AWS_REGION      = var.TAGS_MODULE.AWS_REGION
   PROJECT_NAME    = var.TAGS_MODULE.PROJECT_NAME

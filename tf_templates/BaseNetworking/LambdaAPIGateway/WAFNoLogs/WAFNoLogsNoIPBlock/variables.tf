@@ -31,7 +31,7 @@ variable "PRIVATE_SUBNET_ACL_RULE_INGRESS_LIST_BASE_NETWORKING" {
 
 variable "PRIVATE_SUBNET_ACL_RULE_EGRESS_LIST_BASE_NETWORKING" {
   type        = list(any)
-  description = "Map with argument/values for Network ACL Rules Configuration"  
+  description = "Map with argument/values for Network ACL Rules Configuration"
 }
 
 ############################### DEPENDENCIES LAYER VARIABLES #################################
@@ -109,7 +109,7 @@ variable "CREATE_CONTENT_MANAGEMENT_BUCKET" {
 }
 
 variable "CONTENT_MANAGEMENT_BUCKET_NAME" {
-description = "The name of the bucket. If omitted, Terraform will assign a random, unique name. Must be lowercase and less than or equal to 63 characters in length"
+  description = "The name of the bucket. If omitted, Terraform will assign a random, unique name. Must be lowercase and less than or equal to 63 characters in length"
   type        = string
 }
 

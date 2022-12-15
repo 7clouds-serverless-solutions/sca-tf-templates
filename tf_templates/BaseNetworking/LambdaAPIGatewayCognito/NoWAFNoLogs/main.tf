@@ -103,15 +103,16 @@ module "cognito_user_pool" {
 module "cognito_client" {
   source = "github.com/7clouds-terraform-modules/terraform-aws-cognito-client.git"
 
-  CLIENT_NAME                  = var.COGNITO_CLIENT_NAME
-  USER_POOL_ID                 = module.cognito_user_pool.USER_POOL_ID
-  SUPPORTED_IDENTITY_PROVIDERS = var.COGNITO_CLIENT_SUPPORTED_IDENTITY_PROVIDERS
-  ALLOWED_OAUTH_FLOWS          = var.COGNITO_CLIENT_ALLOWED_OAUTH_FLOWS
-  ALLOWED_OAUTH_SCOPES         = var.COGNITO_CLIENT_ALLOWED_OAUTH_SCOPES
-  CALLBACK_URLS                = var.COGNITO_CLIENT_CALLBACK_URLS
-  LOGOUT_URLS                  = var.COGNITO_CLIENT_LOGOUT_URLS
-  GENERATE_SECRET              = var.COGNITO_CLIENT_GENERATE_SECRET
-  EXPLICIT_AUTH_FLOWS          = var.COGNITO_CLIENT_EXPLICIT_AUTH_FLOWS
+  CLIENT_NAME                          = var.COGNITO_CLIENT_NAME
+  USER_POOL_ID                         = module.cognito_user_pool.USER_POOL_ID
+  SUPPORTED_IDENTITY_PROVIDERS         = var.COGNITO_CLIENT_SUPPORTED_IDENTITY_PROVIDERS
+  ALLOWED_OAUTH_FLOWS                  = var.COGNITO_CLIENT_ALLOWED_OAUTH_FLOWS
+  ALLOWED_OAUTH_SCOPES                 = var.COGNITO_CLIENT_ALLOWED_OAUTH_SCOPES
+  CALLBACK_URLS                        = var.COGNITO_CLIENT_CALLBACK_URLS
+  LOGOUT_URLS                          = var.COGNITO_CLIENT_LOGOUT_URLS
+  GENERATE_SECRET                      = var.COGNITO_CLIENT_GENERATE_SECRET
+  EXPLICIT_AUTH_FLOWS                  = var.COGNITO_CLIENT_EXPLICIT_AUTH_FLOWS
+  ALLOWED_OAUTH_FLOWS_USER_POOL_CLIENT = var.COGNITO_ALLOWED_OAUTH_FLOWS_USER_POOL_CLIENT
 }
 
 module "cognito_domain" {
@@ -128,8 +129,8 @@ module "cognito_user_groups" {
 }
 
 module "cognito_user_and_group_association" {
-  source  = "7clouds-terraform-modules/cognito-user-and-group-association/aws"
-  version = "0.1.0"
+  source     = "7clouds-terraform-modules/cognito-user-and-group-association/aws"
+  version    = "0.1.0"
   depends_on = [module.cognito_user_groups]
 
   USER_POOL_ID  = module.cognito_user_pool.USER_POOL_ID
