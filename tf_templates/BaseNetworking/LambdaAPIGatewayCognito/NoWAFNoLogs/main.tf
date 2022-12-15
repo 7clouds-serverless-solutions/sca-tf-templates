@@ -1,4 +1,4 @@
-module "base-networking" {
+module "base_networking" {
   source  = "7clouds-terraform-modules/base-networking/aws"
   version = "0.1.2"
 
