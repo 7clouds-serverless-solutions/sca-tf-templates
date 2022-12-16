@@ -170,7 +170,7 @@ module "cognito_client" {
 module "cognito_domain" {
   source  = "7clouds-terraform-modules/cognito-domain/aws"
   version = "0.1.0"
-  
+
   USER_POOL_ID          = module.cognito_user_pool.USER_POOL_ID
   AMAZON_COGNITO_DOMAIN = var.COGNITO_DOMAIN
 }
