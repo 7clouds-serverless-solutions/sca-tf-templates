@@ -80,7 +80,7 @@ module "lambda_api_gateway" {
   MEMORY_SIZE                         = var.MEMORY_SIZE_LAMBDA_API
   TIMEOUT                             = var.TIMEOUT_LAMBDA_API
   HANDLER                             = var.HANDLER_LAMBDA_API
-  ENVIRONMENT_VARIABLES               = merge({ content_bucket = module.content_management_bucket.CONTENT_BUCKET }, var.ENVIRONMENT_VARIABLES_LAMBDA_API)
+  ENVIRONMENT_VARIABLES               = merge({ content_bucket = module.content_management_bucket.CONTENT_BUCKET, user_pool_id = module.cognito_user_pool.USER_POOL_ID, app_client_id = module.cognito_client.CLIENT_ID }, var.ENVIRONMENT_VARIABLES_LAMBDA_API)
   MANAGED_POLICY_ARNS                 = [module.cloudwatch_disable_policy.IAM_POLICY_ARN, module.content_bucket_allow_policy.IAM_POLICY_ARN]
   API_GATEWAY_METHOD_AUTHORIZATION    = var.API_GATEWAY_METHOD_AUTHORIZATION_LAMBDA_API
   API_GATEWAY_METHOD_HTTP_METHOD      = var.API_GATEWAY_METHOD_HTTP_METHOD_LAMBDA_API

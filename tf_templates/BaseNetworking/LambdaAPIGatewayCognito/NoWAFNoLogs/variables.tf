@@ -297,13 +297,11 @@ variable "COGNITO_CLIENT_LOGOUT_URLS" {
 variable "COGNITO_CLIENT_GENERATE_SECRET" {
   description = "Should an application secret be generated"
   type        = bool
-  default     = null
 }
 
 variable "COGNITO_CLIENT_EXPLICIT_AUTH_FLOWS" {
   description = "List of authentication flows (ADMIN_NO_SRP_AUTH, CUSTOM_AUTH_FLOW_ONLY, USER_PASSWORD_AUTH, ALLOW_ADMIN_USER_PASSWORD_AUTH, ALLOW_CUSTOM_AUTH, ALLOW_USER_PASSWORD_AUTH, ALLOW_USER_SRP_AUTH, ALLOW_REFRESH_TOKEN_AUTH)"
   type        = set(string)
-  default     = null
 }
 
 ########################### COGNITO DOMAIN VARIABLE ############################
