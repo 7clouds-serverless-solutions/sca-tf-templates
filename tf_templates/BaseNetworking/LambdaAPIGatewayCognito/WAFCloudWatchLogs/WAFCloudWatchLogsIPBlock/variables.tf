@@ -193,7 +193,7 @@ variable "API_GATEWAY_INTEGRATION_INPUT_TYPE_LAMBDA_API" {
   description = "Integration input's type. 'AWS_PROXY' was set for Lambda Proxy Integration"
 }
 
-############################### WAF STANDARD VARIABLES #################################
+############################### WAF IP BLOCK VARIABLES #################################
 variable "WAF_IP_ADDRESS_VERSION_WAF_IP_BLOCK" {
   type        = string
   description = "Valid values are IPV4 or IPV6"
