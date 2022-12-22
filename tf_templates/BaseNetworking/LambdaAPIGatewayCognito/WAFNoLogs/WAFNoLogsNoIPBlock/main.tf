@@ -100,6 +100,61 @@ module "waf_standard" {
   RULES                                 = var.RULES_WAF_STANDARD
 }
 
+module "cognito_user_pool" {
+  source  = "7clouds-terraform-modules/cognito-user-pool/aws"
+  version = "0.1.0"
+
+  USER_POOL_NAME             = var.COGNITO_USER_POOL_NAME
+  PROJECT_NAME               = var.TAGS_MODULE.PROJECT_NAME
+  EMAIL_VERIFICATION_MESSAGE = var.COGNITO_USER_POOL_VERIFICATION_MESSAGE
+  EMAIL_VERIFICATION_SUBJECT = var.COGNITO_USER_POOL_EMAIL_VERIFICATION_SUBJECT
+  ADMIN_CREATE_USER_CONFIG   = var.COGNITO_USER_POOL_ADMIN_CREATE_USER_CONFIG
+  USER_POOL_PASSWORD_POLICY  = var.COGNITO_USER_POOL_PASSWORD_POLICY
+  TAGS                       = module.tags.TAGS
+}
+
+module "cognito_client" {
+  source  = "7clouds-terraform-modules/cognito-client/aws"
+  version = "0.1.0"
+
+  CLIENT_NAME                          = var.COGNITO_CLIENT_NAME
+  USER_POOL_ID                         = module.cognito_user_pool.USER_POOL_ID
+  SUPPORTED_IDENTITY_PROVIDERS         = var.COGNITO_CLIENT_SUPPORTED_IDENTITY_PROVIDERS
+  ALLOWED_OAUTH_FLOWS                  = var.COGNITO_CLIENT_ALLOWED_OAUTH_FLOWS
+  ALLOWED_OAUTH_SCOPES                 = var.COGNITO_CLIENT_ALLOWED_OAUTH_SCOPES
+  CALLBACK_URLS                        = var.COGNITO_CLIENT_CALLBACK_URLS
+  LOGOUT_URLS                          = var.COGNITO_CLIENT_LOGOUT_URLS
+  GENERATE_SECRET                      = var.COGNITO_CLIENT_GENERATE_SECRET
+  EXPLICIT_AUTH_FLOWS                  = var.COGNITO_CLIENT_EXPLICIT_AUTH_FLOWS
+  ALLOWED_OAUTH_FLOWS_USER_POOL_CLIENT = var.COGNITO_ALLOWED_OAUTH_FLOWS_USER_POOL_CLIENT
+}
+
+module "cognito_domain" {
+  source  = "7clouds-terraform-modules/cognito-domain/aws"
+  version = "0.1.0"
+
+  USER_POOL_ID          = module.cognito_user_pool.USER_POOL_ID
+  AMAZON_COGNITO_DOMAIN = var.COGNITO_DOMAIN
+}
+
+module "cognito_user_groups" {
+  source = "7clouds-terraform-modules/cognito-user-group/aws"
+
+  USER_POOL_ID               = module.cognito_user_pool.USER_POOL_ID
+  USER_GROUP_ATTRIBUTES_LIST = var.COGNITO_USER_GROUP_ATTRIBUTES_LIST
+}
+
+module "cognito_user_and_group_association" {
+  source     = "7clouds-terraform-modules/cognito-user-and-group-association/aws"
+  version    = "0.1.0"
+  depends_on = [module.cognito_user_groups]
+
+  USER_POOL_ID  = module.cognito_user_pool.USER_POOL_ID
+  USER_NAME     = var.COGNITO_USERNAME
+  USER_PASSWORD = var.COGNITO_USER_PASSWORD
+  GROUP_LIST    = var.COGNITO_GROUPS_TO_ASSOCIATE_USER_TO
+}
+
 module "tags" {
   source  = "7clouds-terraform-modules/tags/aws"
   version = "0.1.0"
