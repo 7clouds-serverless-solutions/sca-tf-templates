@@ -56,7 +56,7 @@ module "lambda_api_gateway" {
   TIMEOUT                             = var.TIMEOUT_LAMBDA_API
   HANDLER                             = var.HANDLER_LAMBDA_API
   ENVIRONMENT_VARIABLES               = merge({ content_bucket = module.content_management_bucket.CONTENT_BUCKET, user_pool_id = module.cognito_user_pool.USER_POOL_ID, app_client_id = module.cognito_client.CLIENT_ID }, var.ENVIRONMENT_VARIABLES_LAMBDA_API)
-  MANAGED_POLICY_ARNS                 = [module.content_bucket_allow_policy.IAM_POLICY_ARN]
+  MANAGED_POLICY_ARNS                 = concat([module.content_bucket_allow_policy.IAM_POLICY_ARN], var.LAMBDA_MANAGED_POLICIES_ARN_LIST)
   API_GATEWAY_METHOD_AUTHORIZATION    = var.API_GATEWAY_METHOD_AUTHORIZATION_LAMBDA_API
   API_GATEWAY_METHOD_HTTP_METHOD      = var.API_GATEWAY_METHOD_HTTP_METHOD_LAMBDA_API
   API_GATEWAY_INTEGRATION_HTTP_METHOD = var.API_GATEWAY_INTEGRATION_HTTP_METHOD_LAMBDA_API

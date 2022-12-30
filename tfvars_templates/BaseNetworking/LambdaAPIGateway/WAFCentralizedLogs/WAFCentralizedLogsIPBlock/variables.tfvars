@@ -95,93 +95,9 @@ API_GATEWAY_METHOD_AUTHORIZATION_LAMBDA_API                           = "NONE"
 API_GATEWAY_METHOD_HTTP_METHOD_LAMBDA_API                             = "ANY"
 API_GATEWAY_INTEGRATION_HTTP_METHOD_LAMBDA_API                        = "POST"
 API_GATEWAY_INTEGRATION_INPUT_TYPE_LAMBDA_API                         = "AWS_PROXY"
+LAMBDA_MANAGED_POLICIES_ARN_LIST                                      = ["arn:aws:iam::aws:policy/SecretsManagerReadWrite"]
 AZ_COUNT_BASE_NETWORKING                                              = 2
-CREATE_CUSTOM_PUBLIC_SUBNET_ACL_BASE_NETWORKING                       = true
-CREATE_CUSTOM_PRIVATE_SUBNET_ACL_BASE_NETWORKING                      = true
-PUBLIC_SUBNET_ACL_RULE_INGRESS_LIST_BASE_NETWORKING = [
-  {
-    rule_number = 100
-    egress      = false
-    protocol    = "tcp"
-    rule_action = "allow"
-    cidr_block  = "0.0.0.0/0"
-    from_port   = 80
-    to_port     = 80
-  },
 
-  {
-    rule_number = 200
-    egress      = false
-    protocol    = "tcp"
-    rule_action = "deny"
-    cidr_block  = "172.0.0.0/0"
-    from_port   = 80
-    to_port     = 5000
-  }
-]
-PUBLIC_SUBNET_ACL_RULE_EGRESS_LIST_BASE_NETWORKING = [
-  {
-    rule_number = 100
-    egress      = true
-    protocol    = "tcp"
-    rule_action = "allow"
-    cidr_block  = "0.0.0.0/0"
-    from_port   = 80
-    to_port     = 80
-  },
-
-  {
-    rule_number = 200
-    egress      = true
-    protocol    = "tcp"
-    rule_action = "deny"
-    cidr_block  = "172.0.0.0/0"
-    from_port   = 80
-    to_port     = 5000
-  }
-]
-PRIVATE_SUBNET_ACL_RULE_INGRESS_LIST_BASE_NETWORKING = [
-  {
-    rule_number = 100
-    egress      = false
-    protocol    = "tcp"
-    rule_action = "allow"
-    cidr_block  = "0.0.0.0/0"
-    from_port   = 80
-    to_port     = 80
-  },
-
-  {
-    rule_number = 200
-    egress      = false
-    protocol    = "tcp"
-    rule_action = "deny"
-    cidr_block  = "172.0.0.0/0"
-    from_port   = 80
-    to_port     = 5000
-  }
-]
-PRIVATE_SUBNET_ACL_RULE_EGRESS_LIST_BASE_NETWORKING = [
-  {
-    rule_number = 100
-    egress      = true
-    protocol    = "tcp"
-    rule_action = "allow"
-    cidr_block  = "0.0.0.0/0"
-    from_port   = 80
-    to_port     = 80
-  },
-
-  {
-    rule_number = 200
-    egress      = true
-    protocol    = "tcp"
-    rule_action = "deny"
-    cidr_block  = "172.0.0.0/0"
-    from_port   = 80
-    to_port     = 5000
-  }
-]
 
 WAF_IP_ADDRESS_VERSION_WAF_IP_BLOCK              = "IPV4"
 WAF_ALLOWED_IP_ADDRESS_LIST_WAF_IP_BLOCK         = []
@@ -191,7 +107,7 @@ WAF_SCOPE_CLOUDWATCH_METRICS_WAF_IP_BLOCK        = true
 WAF_SCOPE_SAMPLED_REQUESTS_WAF_IP_BLOCK          = false
 WAF_IP_SET_ALLOW_CLOUDWATCH_METRICS_WAF_IP_BLOCK = true
 WAF_IP_SET_ALLOW_SAMPLED_REQUESTS_WAF_IP_BLOCK   = false
-RULES_WAF_IP_BLOCK                               = [
+RULES_WAF_IP_BLOCK = [
   {
     name                                     = "AWSManagedRulesAmazonIpReputationList"
     managed_rule_group_statement_name        = "AWSManagedRulesAmazonIpReputationList"

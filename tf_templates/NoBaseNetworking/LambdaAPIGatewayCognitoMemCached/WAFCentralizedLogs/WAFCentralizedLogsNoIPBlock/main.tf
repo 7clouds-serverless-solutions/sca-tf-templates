@@ -117,7 +117,7 @@ module "lambda_api_gateway" {
   TIMEOUT                             = var.TIMEOUT_LAMBDA_API
   HANDLER                             = var.HANDLER_LAMBDA_API
   ENVIRONMENT_VARIABLES               = merge({ FIREHOSE_STREAM_NAME = module.centralized_logs.KINESIS_FIREHOSE_DELIVERY_STREAM_NAME, content_bucket = module.content_management_bucket.CONTENT_BUCKET, user_pool_id = module.cognito_user_pool.USER_POOL_ID, app_client_id = module.cognito_client.CLIENT_ID }, var.ENVIRONMENT_VARIABLES_LAMBDA_API)
-  MANAGED_POLICY_ARNS                 = [module.cloudwatch_disable_policy.IAM_POLICY_ARN, module.content_bucket_allow_policy.IAM_POLICY_ARN]
+  MANAGED_POLICY_ARNS                 = concat([module.cloudwatch_disable_policy.IAM_POLICY_ARN, module.content_bucket_allow_policy.IAM_POLICY_ARN], var.LAMBDA_MANAGED_POLICIES_ARN_LIST)
   API_GATEWAY_METHOD_AUTHORIZATION    = var.API_GATEWAY_METHOD_AUTHORIZATION_LAMBDA_API
   API_GATEWAY_METHOD_HTTP_METHOD      = var.API_GATEWAY_METHOD_HTTP_METHOD_LAMBDA_API
   API_GATEWAY_INTEGRATION_HTTP_METHOD = var.API_GATEWAY_INTEGRATION_HTTP_METHOD_LAMBDA_API
@@ -140,7 +140,7 @@ module "elasticache_memcached" {
   source  = "7clouds-terraform-modules/elasticache/aws"
   version = "0.1.0"
 
-  PROJECT_NAME = var.TAGS_MODULE.PROJECT_NAME
+  PROJECT_NAME          = var.TAGS_MODULE.PROJECT_NAME
   SUBNET_GROUP_NAME     = var.ELASTICACHE_SUBNET_GROUP_NAME
   SUBNET_GROUP_IDS_LIST = []
 
@@ -150,7 +150,7 @@ module "elasticache_memcached" {
   CLUSTER_NUM_CACHE_NODES     = var.ELASTICACHE_CLUSTER_NUM_CACHE_NODES
   CLUSTER_PORT_NUMBER         = var.ELASTICACHE_CLUSTER_PORT_NUMBER
   CLUSTER_SECURITY_GROUPS_IDS = []
-  TAGS = module.tags.TAGS
+  TAGS                        = module.tags.TAGS
 }
 
 module "cognito_user_pool" {

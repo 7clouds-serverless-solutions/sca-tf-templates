@@ -95,10 +95,11 @@ API_GATEWAY_METHOD_AUTHORIZATION_LAMBDA_API                           = "NONE"
 API_GATEWAY_METHOD_HTTP_METHOD_LAMBDA_API                             = "ANY"
 API_GATEWAY_INTEGRATION_HTTP_METHOD_LAMBDA_API                        = "POST"
 API_GATEWAY_INTEGRATION_INPUT_TYPE_LAMBDA_API                         = "AWS_PROXY"
-WAF_WEB_ACL_SCOPE_STANDARD                       = "REGIONAL"
-WAF_SCOPE_CLOUDWATCH_METRICS_STANDARD            = true
-WAF_SCOPE_SAMPLED_REQUESTS_STANDARD              = false
-RULES_WAF_STANDARD                               = [
+LAMBDA_MANAGED_POLICIES_ARN_LIST                                      = ["arn:aws:iam::aws:policy/SecretsManagerReadWrite"]
+WAF_WEB_ACL_SCOPE_STANDARD                                            = "REGIONAL"
+WAF_SCOPE_CLOUDWATCH_METRICS_STANDARD                                 = true
+WAF_SCOPE_SAMPLED_REQUESTS_STANDARD                                   = false
+RULES_WAF_STANDARD = [
   {
     name                                     = "AWSManagedRulesAmazonIpReputationList"
     managed_rule_group_statement_name        = "AWSManagedRulesAmazonIpReputationList"

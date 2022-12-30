@@ -95,11 +95,12 @@ API_GATEWAY_METHOD_AUTHORIZATION_LAMBDA_API                           = "NONE"
 API_GATEWAY_METHOD_HTTP_METHOD_LAMBDA_API                             = "ANY"
 API_GATEWAY_INTEGRATION_HTTP_METHOD_LAMBDA_API                        = "POST"
 API_GATEWAY_INTEGRATION_INPUT_TYPE_LAMBDA_API                         = "AWS_PROXY"
-ELASTICACHE_SUBNET_GROUP_NAME       = "elasticache-subnet-group-example"
-ELASTICACHE_CLUSTER_ENGINE          = "memcached"
-ELASTICACHE_CLUSTER_NODE_TYPE       = "cache.t2.micro"
-ELASTICACHE_CLUSTER_NUM_CACHE_NODES = 1
-ELASTICACHE_CLUSTER_PORT_NUMBER     = 11211
+LAMBDA_MANAGED_POLICIES_ARN_LIST                                      = ["arn:aws:iam::aws:policy/SecretsManagerReadWrite"]
+ELASTICACHE_SUBNET_GROUP_NAME                                         = "elasticache-subnet-group-example"
+ELASTICACHE_CLUSTER_ENGINE                                            = "memcached"
+ELASTICACHE_CLUSTER_NODE_TYPE                                         = "cache.t2.micro"
+ELASTICACHE_CLUSTER_NUM_CACHE_NODES                                   = 1
+ELASTICACHE_CLUSTER_PORT_NUMBER                                       = 11211
 
 TAGS_MODULE = {
   AWS_REGION      = "us-west-1"

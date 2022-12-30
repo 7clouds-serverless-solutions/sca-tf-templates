@@ -134,7 +134,7 @@ WAF_SCOPE_CLOUDWATCH_METRICS_WAF_IP_BLOCK        = true
 WAF_SCOPE_SAMPLED_REQUESTS_WAF_IP_BLOCK          = false
 WAF_IP_SET_ALLOW_CLOUDWATCH_METRICS_WAF_IP_BLOCK = true
 WAF_IP_SET_ALLOW_SAMPLED_REQUESTS_WAF_IP_BLOCK   = false
-RULES_WAF_IP_BLOCK                               = [
+RULES_WAF_IP_BLOCK = [
   {
     name                                     = "AWSManagedRulesAmazonIpReputationList"
     managed_rule_group_statement_name        = "AWSManagedRulesAmazonIpReputationList"

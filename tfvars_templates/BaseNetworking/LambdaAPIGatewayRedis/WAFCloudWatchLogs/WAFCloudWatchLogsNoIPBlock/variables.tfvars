@@ -126,10 +126,10 @@ PRIVATE_SUBNET_ACL_RULE_EGRESS_LIST_BASE_NETWORKING = [
   }
 ]
 
-WAF_WEB_ACL_SCOPE_STANDARD                       = "REGIONAL"
-WAF_SCOPE_CLOUDWATCH_METRICS_STANDARD            = true
-WAF_SCOPE_SAMPLED_REQUESTS_STANDARD              = false
-RULES_WAF_STANDARD                               = [
+WAF_WEB_ACL_SCOPE_STANDARD            = "REGIONAL"
+WAF_SCOPE_CLOUDWATCH_METRICS_STANDARD = true
+WAF_SCOPE_SAMPLED_REQUESTS_STANDARD   = false
+RULES_WAF_STANDARD = [
   {
     name                                     = "AWSManagedRulesAmazonIpReputationList"
     managed_rule_group_statement_name        = "AWSManagedRulesAmazonIpReputationList"

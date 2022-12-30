@@ -189,6 +189,11 @@ variable "API_GATEWAY_INTEGRATION_INPUT_TYPE_LAMBDA_API" {
   description = "Integration input's type. 'AWS_PROXY' was set for Lambda Proxy Integration"
 }
 
+variable "LAMBDA_MANAGED_POLICIES_ARN_LIST" {
+  type        = list(string)
+  description = "Variable for concatenating additional managed policies ARNs to Lambda Permissions"
+}
+
 ############################### WAF IP BLOCK VARIABLES #################################
 variable "WAF_IP_ADDRESS_VERSION_WAF_IP_BLOCK" {
   type        = string

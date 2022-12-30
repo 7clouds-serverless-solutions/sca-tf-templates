@@ -134,7 +134,7 @@ WAF_SCOPE_CLOUDWATCH_METRICS_WAF_IP_BLOCK        = true
 WAF_SCOPE_SAMPLED_REQUESTS_WAF_IP_BLOCK          = false
 WAF_IP_SET_ALLOW_CLOUDWATCH_METRICS_WAF_IP_BLOCK = true
 WAF_IP_SET_ALLOW_SAMPLED_REQUESTS_WAF_IP_BLOCK   = false
-RULES_WAF_IP_BLOCK                               = [
+RULES_WAF_IP_BLOCK = [
   {
     name                                     = "AWSManagedRulesAmazonIpReputationList"
     managed_rule_group_statement_name        = "AWSManagedRulesAmazonIpReputationList"
@@ -161,7 +161,7 @@ RULES_WAF_IP_BLOCK                               = [
 COGNITO_USER_POOL_NAME                       = "user-pool-example"
 COGNITO_USER_POOL_VERIFICATION_MESSAGE       = "Your verification code is {####}."
 COGNITO_USER_POOL_EMAIL_VERIFICATION_SUBJECT = "Your verification code"
-COGNITO_USER_POOL_ADMIN_CREATE_USER_CONFIG   = [{
+COGNITO_USER_POOL_ADMIN_CREATE_USER_CONFIG = [{
   allow_admin_create_user_only = true
   email_message                = "Your username is {username} and temporary password is {####}."
   email_subject                = "Your verification code"
