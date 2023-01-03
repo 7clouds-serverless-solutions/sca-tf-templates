@@ -95,7 +95,7 @@ API_GATEWAY_METHOD_AUTHORIZATION_LAMBDA_API                           = "NONE"
 API_GATEWAY_METHOD_HTTP_METHOD_LAMBDA_API                             = "ANY"
 API_GATEWAY_INTEGRATION_HTTP_METHOD_LAMBDA_API                        = "POST"
 API_GATEWAY_INTEGRATION_INPUT_TYPE_LAMBDA_API                         = "AWS_PROXY"
-LAMBDA_MANAGED_POLICIES_ARN_LIST                                      = ["arn:aws:iam::aws:policy/SecretsManagerReadWrite"]
+LAMBDA_MANAGED_POLICIES_ARN_LIST                                      = ["arn:aws:iam::aws:policy/AmazonKinesisFirehoseFullAccess", "arn:aws:iam::aws:policy/SecretsManagerReadWrite"]
 AZ_COUNT_BASE_NETWORKING                                              = 2
 
 TAGS_MODULE = {
