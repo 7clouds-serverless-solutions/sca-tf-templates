@@ -180,8 +180,8 @@ COGNITO_USER_GROUP_ATTRIBUTES_LIST = [
   },
 ]
 
-COGNITO_USERNAME                    = "admin"
-COGNITO_USER_PASSWORD               = "rootroot"
+COGNITO_USERNAME                    = "your_user_here"
+COGNITO_USER_PASSWORD               = "your_password_here"
 COGNITO_GROUPS_TO_ASSOCIATE_USER_TO = ["admin", "write", "read"]
 
 ELASTICACHE_SUBNET_GROUP_NAME       = "elasticache-subnet-group-example"

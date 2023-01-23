@@ -41,90 +41,6 @@ API_GATEWAY_INTEGRATION_INPUT_TYPE_LAMBDA_API    = "AWS_PROXY"
 LAMBDA_MANAGED_POLICIES_ARN_LIST                 = ["arn:aws:iam::aws:policy/SecretsManagerReadWrite", "arn:aws:iam::aws:policy/AmazonCognitoPowerUser"]
 CREATE_CUSTOM_PUBLIC_SUBNET_ACL_BASE_NETWORKING  = true
 CREATE_CUSTOM_PRIVATE_SUBNET_ACL_BASE_NETWORKING = true
-PUBLIC_SUBNET_ACL_RULE_INGRESS_LIST_BASE_NETWORKING = [
-  {
-    rule_number = 100
-    egress      = false
-    protocol    = "tcp"
-    rule_action = "allow"
-    cidr_block  = "0.0.0.0/0"
-    from_port   = 80
-    to_port     = 80
-  },
-
-  {
-    rule_number = 200
-    egress      = false
-    protocol    = "tcp"
-    rule_action = "deny"
-    cidr_block  = "172.0.0.0/0"
-    from_port   = 80
-    to_port     = 5000
-  }
-]
-PUBLIC_SUBNET_ACL_RULE_EGRESS_LIST_BASE_NETWORKING = [
-  {
-    rule_number = 100
-    egress      = true
-    protocol    = "tcp"
-    rule_action = "allow"
-    cidr_block  = "0.0.0.0/0"
-    from_port   = 80
-    to_port     = 80
-  },
-
-  {
-    rule_number = 200
-    egress      = true
-    protocol    = "tcp"
-    rule_action = "deny"
-    cidr_block  = "172.0.0.0/0"
-    from_port   = 80
-    to_port     = 5000
-  }
-]
-PRIVATE_SUBNET_ACL_RULE_INGRESS_LIST_BASE_NETWORKING = [
-  {
-    rule_number = 100
-    egress      = false
-    protocol    = "tcp"
-    rule_action = "allow"
-    cidr_block  = "0.0.0.0/0"
-    from_port   = 80
-    to_port     = 80
-  },
-
-  {
-    rule_number = 200
-    egress      = false
-    protocol    = "tcp"
-    rule_action = "deny"
-    cidr_block  = "172.0.0.0/0"
-    from_port   = 80
-    to_port     = 5000
-  }
-]
-PRIVATE_SUBNET_ACL_RULE_EGRESS_LIST_BASE_NETWORKING = [
-  {
-    rule_number = 100
-    egress      = true
-    protocol    = "tcp"
-    rule_action = "allow"
-    cidr_block  = "0.0.0.0/0"
-    from_port   = 80
-    to_port     = 80
-  },
-
-  {
-    rule_number = 200
-    egress      = true
-    protocol    = "tcp"
-    rule_action = "deny"
-    cidr_block  = "172.0.0.0/0"
-    from_port   = 80
-    to_port     = 5000
-  }
-]
 
 WAF_WEB_ACL_SCOPE_STANDARD            = "REGIONAL"
 WAF_SCOPE_CLOUDWATCH_METRICS_STANDARD = true
@@ -205,8 +121,8 @@ COGNITO_USER_GROUP_ATTRIBUTES_LIST = [
   },
 ]
 
-COGNITO_USERNAME                    = "admin"
-COGNITO_USER_PASSWORD               = "rootroot"
+COGNITO_USERNAME                    = "your_user_here"
+COGNITO_USER_PASSWORD               = "your_password_here"
 COGNITO_GROUPS_TO_ASSOCIATE_USER_TO = ["admin", "write", "read"]
 
 ELASTICACHE_SUBNET_GROUP_NAME       = "elasticache-subnet-group-example"
