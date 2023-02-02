@@ -48,7 +48,6 @@ LOGS_BUCKET_SERVER_SIDE_ENCRYPTION_CONFIGURATION = {
 
 LOGS_BUCKET_LOCALS_LIFECYCLE_RULES = [
   {
-    id     = "a8b0f5724a7211edb8780242ac120002"
     status = "Enabled"
     filter = {
       prefix = ""
@@ -58,7 +57,6 @@ LOGS_BUCKET_LOCALS_LIFECYCLE_RULES = [
     }
   },
   {
-    id     = "b8b0f5724a7211edb8780242ac110003"
     status = "Enabled"
     filter = {
       prefix = "centralized_logs_query_result_files"
