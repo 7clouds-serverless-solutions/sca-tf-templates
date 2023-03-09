@@ -1,3 +1,16 @@
+############################### ATTACHABLE NETWORK VARIABLES #################################
+variable "SECURITY_GROUP_IDS" {
+  description = "Existing Security Group(s) for attaching to this project"
+  type        = list(string)
+  default     = []
+}
+
+variable "SUBNET_IDS" {
+  description = "Existing Subnet(s) for attaching to this project"
+  type        = list(string)
+  default     = []
+}
+
 ############################### DEPENDENCIES LAYER VARIABLES #################################
 variable "COMPATIBLE_RUNTIMES_DEPENDENCIES_LAYER" {
   description = "List of Runtimes this layer is compatible with. Up to 5 runtimes can be specified"
@@ -167,6 +180,7 @@ variable "HANDLER_LAMBDA_API" {
 variable "ENVIRONMENT_VARIABLES_LAMBDA_API" {
   type        = map(any)
   description = "Environment Variables for Lambda Function"
+  default     = {}
 }
 
 variable "API_GATEWAY_METHOD_AUTHORIZATION_LAMBDA_API" {

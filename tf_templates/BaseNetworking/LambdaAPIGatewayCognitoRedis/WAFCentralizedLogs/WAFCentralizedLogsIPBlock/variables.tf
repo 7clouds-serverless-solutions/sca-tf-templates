@@ -319,6 +319,7 @@ variable "HANDLER_LAMBDA_API" {
 variable "ENVIRONMENT_VARIABLES_LAMBDA_API" {
   type        = map(any)
   description = "Environment Variables for Lambda Function"
+  default     = {}
 }
 
 variable "API_GATEWAY_METHOD_AUTHORIZATION_LAMBDA_API" {
@@ -463,7 +464,6 @@ variable "COGNITO_USER_POOL_PASSWORD_POLICY" {
     )
   )
 }
-
 ########################### COGNITO CLIENT VARIABLES ###########################
 
 variable "COGNITO_CLIENT_NAME" {
@@ -504,6 +504,12 @@ variable "COGNITO_CLIENT_GENERATE_SECRET" {
 variable "COGNITO_CLIENT_EXPLICIT_AUTH_FLOWS" {
   description = "List of authentication flows (ADMIN_NO_SRP_AUTH, CUSTOM_AUTH_FLOW_ONLY, USER_PASSWORD_AUTH, ALLOW_ADMIN_USER_PASSWORD_AUTH, ALLOW_CUSTOM_AUTH, ALLOW_USER_PASSWORD_AUTH, ALLOW_USER_SRP_AUTH, ALLOW_REFRESH_TOKEN_AUTH)"
   type        = set(string)
+}
+
+variable "COGNITO_ALLOWED_OAUTH_FLOWS_USER_POOL_CLIENT" {
+  description = "Whether the client is allowed to follow the OAuth protocol when interacting with Cognito user pools"
+  type        = bool
+  default     = null
 }
 
 ########################### COGNITO DOMAIN VARIABLE ############################
