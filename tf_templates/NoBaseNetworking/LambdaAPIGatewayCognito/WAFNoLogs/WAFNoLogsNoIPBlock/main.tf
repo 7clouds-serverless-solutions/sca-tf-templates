@@ -54,8 +54,8 @@ module "lambda_api_gateway" {
 
   PROJECT_NAME                        = var.TAGS_MODULE.PROJECT_NAME
   ENVIRONMENT                         = var.TAGS_MODULE.ENVIRONMENT
-  SECURITY_GROUP_IDS                  = []
-  SUBNET_IDS                          = []
+  SECURITY_GROUP_IDS                  = var.SECURITY_GROUP_IDS
+  SUBNET_IDS                          = var.SUBNET_IDS
   API_GATEWAY_RESOURCE_PATH           = var.API_GATEWAY_RESOURCE_PATH_LAMBDA_API
   COMPATIBLE_RUNTIMES                 = var.COMPATIBLE_RUNTIMES_LAMBDA_API
   LAMBDA_CODE_ZIP_FILE                = var.LAMBDA_CODE_ZIP_FILE_LAMBDA_API
