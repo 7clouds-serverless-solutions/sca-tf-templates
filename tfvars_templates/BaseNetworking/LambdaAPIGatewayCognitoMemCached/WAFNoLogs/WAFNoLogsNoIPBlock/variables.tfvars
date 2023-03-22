@@ -70,10 +70,7 @@ RULES_WAF_STANDARD = [
     priority                                 = 3
   }
 ]
-AZ_COUNT_BASE_NETWORKING                         = 2
-CREATE_CUSTOM_PUBLIC_SUBNET_ACL_BASE_NETWORKING  = true
-CREATE_CUSTOM_PRIVATE_SUBNET_ACL_BASE_NETWORKING = true
-
+AZ_COUNT_BASE_NETWORKING                     = 2
 COGNITO_USER_POOL_NAME                       = "user-pool-example"
 COGNITO_USER_POOL_VERIFICATION_MESSAGE       = "Your verification code is {####}."
 COGNITO_USER_POOL_EMAIL_VERIFICATION_SUBJECT = "Your verification code"
@@ -125,17 +122,14 @@ COGNITO_USER_GROUP_ATTRIBUTES_LIST = [
     role_arn    = null
   },
 ]
-
 COGNITO_USERNAME                    = "your_user_here"
 COGNITO_USER_PASSWORD               = "your_password_here"
 COGNITO_GROUPS_TO_ASSOCIATE_USER_TO = ["admin", "write", "read"]
-
 ELASTICACHE_SUBNET_GROUP_NAME       = "elasticache-subnet-group-example"
 ELASTICACHE_CLUSTER_ENGINE          = "memcached"
 ELASTICACHE_CLUSTER_NODE_TYPE       = "cache.t2.micro"
 ELASTICACHE_CLUSTER_NUM_CACHE_NODES = 1
 ELASTICACHE_CLUSTER_PORT_NUMBER     = 11211
-
 TAGS_MODULE = {
   AWS_REGION      = "us-east-1"
   PROJECT_NAME    = "ExampleProject"

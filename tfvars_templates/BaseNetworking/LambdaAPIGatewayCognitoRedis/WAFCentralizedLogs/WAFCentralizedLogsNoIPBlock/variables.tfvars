@@ -97,8 +97,6 @@ API_GATEWAY_INTEGRATION_HTTP_METHOD_LAMBDA_API                        = "POST"
 API_GATEWAY_INTEGRATION_INPUT_TYPE_LAMBDA_API                         = "AWS_PROXY"
 LAMBDA_MANAGED_POLICIES_ARN_LIST                                      = ["arn:aws:iam::aws:policy/AmazonKinesisFirehoseFullAccess", "arn:aws:iam::aws:policy/SecretsManagerReadWrite", "arn:aws:iam::aws:policy/AmazonCognitoPowerUser"]
 AZ_COUNT_BASE_NETWORKING                                              = 2
-
-
 WAF_WEB_ACL_SCOPE_STANDARD            = "REGIONAL"
 WAF_SCOPE_CLOUDWATCH_METRICS_STANDARD = true
 WAF_SCOPE_SAMPLED_REQUESTS_STANDARD   = false
@@ -154,9 +152,7 @@ COGNITO_CLIENT_LOGOUT_URLS                   = ["https://localhost:5000/sign-out
 COGNITO_CLIENT_GENERATE_SECRET               = false
 COGNITO_CLIENT_EXPLICIT_AUTH_FLOWS           = ["ALLOW_ADMIN_USER_PASSWORD_AUTH", "ALLOW_REFRESH_TOKEN_AUTH"]
 COGNITO_ALLOWED_OAUTH_FLOWS_USER_POOL_CLIENT = true
-
 COGNITO_DOMAIN = "example-domain-testing"
-
 COGNITO_USER_GROUP_ATTRIBUTES_LIST = [
   {
     name        = "admin"
@@ -177,17 +173,14 @@ COGNITO_USER_GROUP_ATTRIBUTES_LIST = [
     role_arn    = null
   },
 ]
-
 COGNITO_USERNAME                    = "your_user_here"
 COGNITO_USER_PASSWORD               = "your_password_here"
 COGNITO_GROUPS_TO_ASSOCIATE_USER_TO = ["admin", "write", "read"]
-
 ELASTICACHE_SUBNET_GROUP_NAME       = "elasticache-subnet-group-example"
 ELASTICACHE_CLUSTER_ENGINE          = "redis"
 ELASTICACHE_CLUSTER_NODE_TYPE       = "cache.t2.micro"
 ELASTICACHE_CLUSTER_NUM_CACHE_NODES = 1
 ELASTICACHE_CLUSTER_PORT_NUMBER     = 6379
-
 TAGS_MODULE = {
   AWS_REGION      = "us-west-1"
   PROJECT_NAME    = "ExampleProject"

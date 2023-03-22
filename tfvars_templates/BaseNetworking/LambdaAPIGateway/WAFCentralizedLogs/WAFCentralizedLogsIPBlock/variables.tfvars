@@ -97,16 +97,14 @@ API_GATEWAY_INTEGRATION_HTTP_METHOD_LAMBDA_API                        = "POST"
 API_GATEWAY_INTEGRATION_INPUT_TYPE_LAMBDA_API                         = "AWS_PROXY"
 LAMBDA_MANAGED_POLICIES_ARN_LIST                                      = ["arn:aws:iam::aws:policy/AmazonKinesisFirehoseFullAccess", "arn:aws:iam::aws:policy/SecretsManagerReadWrite"]
 AZ_COUNT_BASE_NETWORKING                                              = 2
-
-
-WAF_IP_ADDRESS_VERSION_WAF_IP_BLOCK              = "IPV4"
-WAF_ALLOWED_IP_ADDRESS_LIST_WAF_IP_BLOCK         = []
-WAF_IP_SET_SCOPE_WAF_IP_BLOCK                    = "REGIONAL"
-WAF_IP_SET_ALLOW_WAF_IP_BLOCK                    = "IPSetAllow"
-WAF_SCOPE_CLOUDWATCH_METRICS_WAF_IP_BLOCK        = true
-WAF_SCOPE_SAMPLED_REQUESTS_WAF_IP_BLOCK          = false
-WAF_IP_SET_ALLOW_CLOUDWATCH_METRICS_WAF_IP_BLOCK = true
-WAF_IP_SET_ALLOW_SAMPLED_REQUESTS_WAF_IP_BLOCK   = false
+WAF_IP_ADDRESS_VERSION_WAF_IP_BLOCK                                   = "IPV4"
+WAF_ALLOWED_IP_ADDRESS_LIST_WAF_IP_BLOCK                              = []
+WAF_IP_SET_SCOPE_WAF_IP_BLOCK                                         = "REGIONAL"
+WAF_IP_SET_ALLOW_WAF_IP_BLOCK                                         = "IPSetAllow"
+WAF_SCOPE_CLOUDWATCH_METRICS_WAF_IP_BLOCK                             = true
+WAF_SCOPE_SAMPLED_REQUESTS_WAF_IP_BLOCK                               = false
+WAF_IP_SET_ALLOW_CLOUDWATCH_METRICS_WAF_IP_BLOCK                      = true
+WAF_IP_SET_ALLOW_SAMPLED_REQUESTS_WAF_IP_BLOCK                        = false
 RULES_WAF_IP_BLOCK = [
   {
     name                                     = "AWSManagedRulesAmazonIpReputationList"
@@ -130,7 +128,6 @@ RULES_WAF_IP_BLOCK = [
     priority                                 = 4
   }
 ]
-
 TAGS_MODULE = {
   AWS_REGION      = "us-west-1"
   PROJECT_NAME    = "ExampleProject"

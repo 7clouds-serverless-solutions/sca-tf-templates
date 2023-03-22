@@ -70,8 +70,7 @@ RULES_WAF_STANDARD = [
     priority                                 = 3
   }
 ]
-CREATE_CUSTOM_PUBLIC_SUBNET_ACL_BASE_NETWORKING  = true
-CREATE_CUSTOM_PRIVATE_SUBNET_ACL_BASE_NETWORKING = true
+
 
 COGNITO_USER_POOL_NAME                       = "user-pool-example"
 COGNITO_USER_POOL_VERIFICATION_MESSAGE       = "Your verification code is {####}."

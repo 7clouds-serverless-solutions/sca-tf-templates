@@ -25,27 +25,24 @@ CONTENT_MANAGEMENT_BUCKET_VERSIONING = {
   versioning = true
   status     = "Enabled"
 }
-API_GATEWAY_RESOURCE_PATH_LAMBDA_API             = "{proxy+}"
-COMPATIBLE_RUNTIMES_LAMBDA_API                   = "python3.8"
-LAMBDA_CODE_ZIP_FILE_LAMBDA_API                  = "YOUR_PATH_HERE"
-WARMUP_ENABLED_LAMBDA_API                        = true
-LAMBDA_WARMUP_SCHEDULE_EXPRESSION_LAMBDA_API     = "rate(5 minutes)"
-MEMORY_SIZE_LAMBDA_API                           = 128
-TIMEOUT_LAMBDA_API                               = 60
-HANDLER_LAMBDA_API                               = "app.lambda_handler"
-ENVIRONMENT_VARIABLES_LAMBDA_API                 = { foo = "bar" }
-API_GATEWAY_METHOD_AUTHORIZATION_LAMBDA_API      = "NONE"
-API_GATEWAY_METHOD_HTTP_METHOD_LAMBDA_API        = "ANY"
-API_GATEWAY_INTEGRATION_HTTP_METHOD_LAMBDA_API   = "POST"
-API_GATEWAY_INTEGRATION_INPUT_TYPE_LAMBDA_API    = "AWS_PROXY"
-LAMBDA_MANAGED_POLICIES_ARN_LIST                 = ["arn:aws:iam::aws:policy/SecretsManagerReadWrite", "arn:aws:iam::aws:policy/AmazonCognitoPowerUser"]
-AZ_COUNT_BASE_NETWORKING                         = 2
-CREATE_CUSTOM_PUBLIC_SUBNET_ACL_BASE_NETWORKING  = true
-CREATE_CUSTOM_PRIVATE_SUBNET_ACL_BASE_NETWORKING = true
-
-WAF_WEB_ACL_SCOPE_STANDARD            = "REGIONAL"
-WAF_SCOPE_CLOUDWATCH_METRICS_STANDARD = true
-WAF_SCOPE_SAMPLED_REQUESTS_STANDARD   = false
+API_GATEWAY_RESOURCE_PATH_LAMBDA_API           = "{proxy+}"
+COMPATIBLE_RUNTIMES_LAMBDA_API                 = "python3.8"
+LAMBDA_CODE_ZIP_FILE_LAMBDA_API                = "YOUR_PATH_HERE"
+WARMUP_ENABLED_LAMBDA_API                      = true
+LAMBDA_WARMUP_SCHEDULE_EXPRESSION_LAMBDA_API   = "rate(5 minutes)"
+MEMORY_SIZE_LAMBDA_API                         = 128
+TIMEOUT_LAMBDA_API                             = 60
+HANDLER_LAMBDA_API                             = "app.lambda_handler"
+ENVIRONMENT_VARIABLES_LAMBDA_API               = { foo = "bar" }
+API_GATEWAY_METHOD_AUTHORIZATION_LAMBDA_API    = "NONE"
+API_GATEWAY_METHOD_HTTP_METHOD_LAMBDA_API      = "ANY"
+API_GATEWAY_INTEGRATION_HTTP_METHOD_LAMBDA_API = "POST"
+API_GATEWAY_INTEGRATION_INPUT_TYPE_LAMBDA_API  = "AWS_PROXY"
+LAMBDA_MANAGED_POLICIES_ARN_LIST               = ["arn:aws:iam::aws:policy/SecretsManagerReadWrite", "arn:aws:iam::aws:policy/AmazonCognitoPowerUser"]
+AZ_COUNT_BASE_NETWORKING                       = 2
+WAF_WEB_ACL_SCOPE_STANDARD                     = "REGIONAL"
+WAF_SCOPE_CLOUDWATCH_METRICS_STANDARD          = true
+WAF_SCOPE_SAMPLED_REQUESTS_STANDARD            = false
 RULES_WAF_STANDARD = [
   {
     name                                     = "AWSManagedRulesAmazonIpReputationList"
@@ -131,7 +128,6 @@ ELASTICACHE_CLUSTER_ENGINE          = "redis"
 ELASTICACHE_CLUSTER_NODE_TYPE       = "cache.t2.micro"
 ELASTICACHE_CLUSTER_NUM_CACHE_NODES = 1
 ELASTICACHE_CLUSTER_PORT_NUMBER     = 6379
-
 TAGS_MODULE = {
   AWS_REGION      = "us-west-1"
   PROJECT_NAME    = "ExampleProject"

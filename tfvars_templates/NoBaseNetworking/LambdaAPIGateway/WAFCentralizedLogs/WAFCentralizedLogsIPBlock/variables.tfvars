@@ -127,7 +127,6 @@ RULES_WAF_IP_BLOCK = [
     priority                                 = 4
   }
 ]
-
 TAGS_MODULE = {
   AWS_REGION      = "us-west-1"
   PROJECT_NAME    = "ExampleProject"

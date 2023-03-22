@@ -97,7 +97,6 @@ API_GATEWAY_INTEGRATION_HTTP_METHOD_LAMBDA_API                        = "POST"
 API_GATEWAY_INTEGRATION_INPUT_TYPE_LAMBDA_API                         = "AWS_PROXY"
 LAMBDA_MANAGED_POLICIES_ARN_LIST                                      = ["arn:aws:iam::aws:policy/AmazonKinesisFirehoseFullAccess", "arn:aws:iam::aws:policy/SecretsManagerReadWrite"]
 AZ_COUNT_BASE_NETWORKING                                              = 2
-
 TAGS_MODULE = {
   AWS_REGION      = "us-west-1"
   PROJECT_NAME    = "ExampleProject"

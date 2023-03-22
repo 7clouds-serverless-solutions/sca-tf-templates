@@ -70,8 +70,7 @@ RULES_WAF_STANDARD = [
     priority                                 = 3
   }
 ]
-CREATE_CUSTOM_PUBLIC_SUBNET_ACL_BASE_NETWORKING  = true
-CREATE_CUSTOM_PRIVATE_SUBNET_ACL_BASE_NETWORKING = true
+
 TAGS_MODULE = {
   AWS_REGION      = "us-east-1"
   PROJECT_NAME    = "ExampleProject"

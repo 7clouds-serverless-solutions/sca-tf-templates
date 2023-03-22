@@ -39,9 +39,6 @@ API_GATEWAY_METHOD_HTTP_METHOD_LAMBDA_API        = "ANY"
 API_GATEWAY_INTEGRATION_HTTP_METHOD_LAMBDA_API   = "POST"
 API_GATEWAY_INTEGRATION_INPUT_TYPE_LAMBDA_API    = "AWS_PROXY"
 LAMBDA_MANAGED_POLICIES_ARN_LIST                 = ["arn:aws:iam::aws:policy/SecretsManagerReadWrite", "arn:aws:iam::aws:policy/AmazonCognitoPowerUser"]
-CREATE_CUSTOM_PUBLIC_SUBNET_ACL_BASE_NETWORKING  = true
-CREATE_CUSTOM_PRIVATE_SUBNET_ACL_BASE_NETWORKING = true
-
 WAF_IP_ADDRESS_VERSION_WAF_IP_BLOCK              = "IPV4"
 WAF_ALLOWED_IP_ADDRESS_LIST_WAF_IP_BLOCK         = []
 WAF_IP_SET_SCOPE_WAF_IP_BLOCK                    = "REGIONAL"
@@ -129,7 +126,6 @@ COGNITO_USER_GROUP_ATTRIBUTES_LIST = [
 COGNITO_USERNAME                    = "your_user_here"
 COGNITO_USER_PASSWORD               = "your_password_here"
 COGNITO_GROUPS_TO_ASSOCIATE_USER_TO = ["admin", "write", "read"]
-
 TAGS_MODULE = {
   AWS_REGION      = "us-west-1"
   PROJECT_NAME    = "ExampleProject"

@@ -125,7 +125,6 @@ RULES_WAF_STANDARD = [
     priority                                 = 3
   }
 ]
-
 TAGS_MODULE = {
   AWS_REGION      = "us-west-1"
   PROJECT_NAME    = "ExampleProject"

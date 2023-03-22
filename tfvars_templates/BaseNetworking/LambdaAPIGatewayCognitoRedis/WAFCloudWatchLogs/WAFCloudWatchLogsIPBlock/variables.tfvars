@@ -40,9 +40,6 @@ API_GATEWAY_INTEGRATION_HTTP_METHOD_LAMBDA_API   = "POST"
 API_GATEWAY_INTEGRATION_INPUT_TYPE_LAMBDA_API    = "AWS_PROXY"
 LAMBDA_MANAGED_POLICIES_ARN_LIST                 = ["arn:aws:iam::aws:policy/SecretsManagerReadWrite", "arn:aws:iam::aws:policy/AmazonCognitoPowerUser"]
 AZ_COUNT_BASE_NETWORKING                         = 2
-CREATE_CUSTOM_PUBLIC_SUBNET_ACL_BASE_NETWORKING  = true
-CREATE_CUSTOM_PRIVATE_SUBNET_ACL_BASE_NETWORKING = true
-
 WAF_IP_ADDRESS_VERSION_WAF_IP_BLOCK              = "IPV4"
 WAF_ALLOWED_IP_ADDRESS_LIST_WAF_IP_BLOCK         = []
 WAF_IP_SET_SCOPE_WAF_IP_BLOCK                    = "REGIONAL"
@@ -74,7 +71,6 @@ RULES_WAF_IP_BLOCK = [
     priority                                 = 4
   }
 ]
-
 COGNITO_USER_POOL_NAME                       = "user-pool-example"
 COGNITO_USER_POOL_VERIFICATION_MESSAGE       = "Your verification code is {####}."
 COGNITO_USER_POOL_EMAIL_VERIFICATION_SUBJECT = "Your verification code"
@@ -84,7 +80,6 @@ COGNITO_USER_POOL_ADMIN_CREATE_USER_CONFIG = [{
   email_subject                = "Your verification code"
   sms_message                  = "Your username is {username} and temporary password is {####}."
 }]
-
 COGNITO_USER_POOL_PASSWORD_POLICY = [{
   minimum_length                   = 8
   require_lowercase                = false
@@ -93,7 +88,6 @@ COGNITO_USER_POOL_PASSWORD_POLICY = [{
   require_uppercase                = false
   temporary_password_validity_days = 1
 }]
-
 COGNITO_CLIENT_NAME                          = "cognito-client-example"
 COGNITO_CLIENT_SUPPORTED_IDENTITY_PROVIDERS  = ["COGNITO"]
 COGNITO_CLIENT_ALLOWED_OAUTH_FLOWS           = ["implicit"]
@@ -103,9 +97,7 @@ COGNITO_CLIENT_LOGOUT_URLS                   = ["https://localhost:5000/sign-out
 COGNITO_CLIENT_GENERATE_SECRET               = false
 COGNITO_CLIENT_EXPLICIT_AUTH_FLOWS           = ["ALLOW_ADMIN_USER_PASSWORD_AUTH", "ALLOW_REFRESH_TOKEN_AUTH"]
 COGNITO_ALLOWED_OAUTH_FLOWS_USER_POOL_CLIENT = true
-
 COGNITO_DOMAIN = "example-domain-testing"
-
 COGNITO_USER_GROUP_ATTRIBUTES_LIST = [
   {
     name        = "admin"
@@ -126,17 +118,14 @@ COGNITO_USER_GROUP_ATTRIBUTES_LIST = [
     role_arn    = null
   },
 ]
-
 COGNITO_USERNAME                    = "your_user_here"
 COGNITO_USER_PASSWORD               = "your_password_here"
 COGNITO_GROUPS_TO_ASSOCIATE_USER_TO = ["admin", "write", "read"]
-
 ELASTICACHE_SUBNET_GROUP_NAME       = "elasticache-subnet-group-example"
 ELASTICACHE_CLUSTER_ENGINE          = "redis"
 ELASTICACHE_CLUSTER_NODE_TYPE       = "cache.t2.micro"
 ELASTICACHE_CLUSTER_NUM_CACHE_NODES = 1
 ELASTICACHE_CLUSTER_PORT_NUMBER     = 6379
-
 TAGS_MODULE = {
   AWS_REGION      = "us-west-1"
   PROJECT_NAME    = "ExampleProject"

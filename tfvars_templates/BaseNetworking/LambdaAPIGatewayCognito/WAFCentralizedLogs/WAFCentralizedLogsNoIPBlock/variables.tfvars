@@ -181,7 +181,6 @@ COGNITO_USER_GROUP_ATTRIBUTES_LIST = [
 COGNITO_USERNAME                    = "your_user_here"
 COGNITO_USER_PASSWORD               = "your_password_here"
 COGNITO_GROUPS_TO_ASSOCIATE_USER_TO = ["admin", "write", "read"]
-
 TAGS_MODULE = {
   AWS_REGION      = "us-west-1"
   PROJECT_NAME    = "ExampleProject"

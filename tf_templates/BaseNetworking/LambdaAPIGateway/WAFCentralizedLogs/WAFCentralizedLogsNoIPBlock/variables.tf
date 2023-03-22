@@ -4,34 +4,34 @@ variable "AZ_COUNT_BASE_NETWORKING" {
   description = "Fixed number of AZs to create resources"
 }
 
-variable "CREATE_CUSTOM_PUBLIC_SUBNET_ACL_BASE_NETWORKING" {
-  type        = bool
-  description = "To define if a Custom Network ACL will be created for association with Public Subnet(s)"
+variable "VPC_CIDR_BASE_NETWORKING" {
+  description = "The IPv4 CIDR block for the VPC. CIDR can be explicitly set or it can be derived from IPAM using ipv4_netmask_length"
+  type        = string
+  default = "10.192.0.0/16"
 }
 
-variable "CREATE_CUSTOM_PRIVATE_SUBNET_ACL_BASE_NETWORKING" {
-  type        = bool
-  description = "To define if a Custom Network ACL will be created for association with Private Subnet(s)"
+variable "PUBLIC_SUBNETS_CIDR_BLOCK_LIST_BASE_NETWORKING" {
+  type        = list(string)
+  default     = []
+  description = "Explicit Public Subnet CIDR Block List to overrule creation pattern of Public Subnets. If filled out, this attribute needs to have as many items as the amount of AZs in the selected region if var \"AZ_COUNT\" is not set, or with the same amount of var \"AZ_COUNT\" otherwise"
 }
 
-variable "PUBLIC_SUBNET_ACL_RULE_INGRESS_LIST_BASE_NETWORKING" {
-  type        = list(any)
-  description = "Map with argument/values for Network ACL Rules Configuration"
+variable "PRIVATE_SUBNETS_CIDR_BLOCK_LIST_BASE_NETWORKING" {
+  type        = list(string)
+  default     = []
+  description = "Explicit Private Subnet CIDR Block List to overrule creation pattern of Public Subnets. If filled out, this attribute needs to have as many items as the amount of AZs in the selected region if var \"AZ_COUNT\" is not set, or with the same amount of var \"AZ_COUNT\" otherwise"
 }
 
-variable "PUBLIC_SUBNET_ACL_RULE_EGRESS_LIST_BASE_NETWORKING" {
-  type        = list(any)
-  description = "Map with argument/values for Network ACL Rules Configuration"
+variable "PUBLIC_ROUTE_TABLE_CIDR_BLOCK_BASE_NETWORKING" {
+  description = "The CIDR block of the route"
+  type        = string
+  default     = "0.0.0.0/0"
 }
 
-variable "PRIVATE_SUBNET_ACL_RULE_INGRESS_LIST_BASE_NETWORKING" {
-  type        = list(any)
-  description = "Map with argument/values for Network ACL Rules Configuration"
-}
-
-variable "PRIVATE_SUBNET_ACL_RULE_EGRESS_LIST_BASE_NETWORKING" {
-  type        = list(any)
-  description = "Map with argument/values for Network ACL Rules Configuration"
+variable "PRIVATE_ROUTE_TABLES_CIDR_BLOCK_BASE_NETWORKING" {
+  description = "The CIDR block of the route"
+  type        = string
+  default     = "0.0.0.0/0"
 }
 
 ############################### DEPENDENCIES LAYER VARIABLES #################################

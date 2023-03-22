@@ -70,8 +70,7 @@ RULES_WAF_STANDARD = [
     priority                                 = 3
   }
 ]
-CREATE_CUSTOM_PUBLIC_SUBNET_ACL_BASE_NETWORKING  = true
-CREATE_CUSTOM_PRIVATE_SUBNET_ACL_BASE_NETWORKING = true
+
 
 ELASTICACHE_SUBNET_GROUP_NAME       = "elasticache-subnet-group-example"
 ELASTICACHE_CLUSTER_ENGINE          = "memcached"
