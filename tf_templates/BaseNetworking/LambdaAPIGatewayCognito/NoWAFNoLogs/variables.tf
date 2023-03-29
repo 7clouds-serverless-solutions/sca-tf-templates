@@ -339,6 +339,7 @@ variable "COGNITO_USERNAME" {
 variable "COGNITO_USER_PASSWORD" {
   description = "The user's permanent password. This password must conform to the password policy specified by user pool the user belongs to. The welcome message always contains only temporary_password value. You can suppress sending the welcome message with the message_action argument. Amazon Cognito does not store the password value. Conflicts with temporary_password"
   type        = string
+  default     = null
 }
 
 variable "COGNITO_GROUPS_TO_ASSOCIATE_USER_TO" {
