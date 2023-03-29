@@ -58,7 +58,7 @@ module "content_management_bucket" {
 
 module "lambda_api_gateway" {
   source  = "7clouds-terraform-modules/lambda-api-gateway/aws"
-  version = "0.1.3"
+  version = "0.1.4"
 
   PROJECT_NAME                        = var.TAGS_MODULE.PROJECT_NAME
   ENVIRONMENT                         = var.TAGS_MODULE.ENVIRONMENT

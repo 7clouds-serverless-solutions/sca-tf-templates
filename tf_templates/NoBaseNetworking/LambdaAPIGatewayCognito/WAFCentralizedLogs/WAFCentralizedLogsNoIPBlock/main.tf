@@ -100,7 +100,7 @@ module "centralized_logs" {
 
 module "lambda_api_gateway" {
   source  = "7clouds-terraform-modules/lambda-api-gateway/aws"
-  version = "0.1.3"
+  version = "0.1.4"
 
   PROJECT_NAME                        = var.TAGS_MODULE.PROJECT_NAME
   ENVIRONMENT                         = var.TAGS_MODULE.ENVIRONMENT
@@ -185,10 +185,11 @@ module "cognito_user_and_group_association" {
   version    = "0.1.0"
   depends_on = [module.cognito_user_groups]
 
-  USER_POOL_ID  = module.cognito_user_pool.USER_POOL_ID
-  USER_NAME     = var.COGNITO_USERNAME
-  USER_PASSWORD = var.COGNITO_USER_PASSWORD
-  GROUP_LIST    = var.COGNITO_GROUPS_TO_ASSOCIATE_USER_TO
+  USER_POOL_ID    = module.cognito_user_pool.USER_POOL_ID
+  USER_NAME       = var.COGNITO_USERNAME
+  USER_PASSWORD   = var.COGNITO_USER_PASSWORD
+  GROUP_LIST      = var.COGNITO_GROUPS_TO_ASSOCIATE_USER_TO
+  USER_ATTRIBUTES = var.COGNITO_USER_ATTRIBUTES
 }
 
 module "tags" {

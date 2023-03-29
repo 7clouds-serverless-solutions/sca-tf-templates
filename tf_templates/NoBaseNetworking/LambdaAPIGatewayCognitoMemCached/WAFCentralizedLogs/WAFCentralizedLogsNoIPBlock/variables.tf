@@ -494,6 +494,12 @@ variable "COGNITO_GROUPS_TO_ASSOCIATE_USER_TO" {
   type        = list(string)
 }
 
+variable "COGNITO_USER_ATTRIBUTES" {
+  description = "A map that contains user attributes and attribute values to be set for the user"
+  type        = map(string)
+  default     = {}
+}
+
 ############################### TAGS VARIABLES #################################
 variable "TAGS_MODULE" {
   description = "Map of Tags"
