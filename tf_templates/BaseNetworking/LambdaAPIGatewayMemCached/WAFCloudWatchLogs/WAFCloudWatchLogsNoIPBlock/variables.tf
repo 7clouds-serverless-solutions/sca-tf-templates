@@ -7,7 +7,7 @@ variable "AZ_COUNT_BASE_NETWORKING" {
 variable "VPC_CIDR_BASE_NETWORKING" {
   description = "The IPv4 CIDR block for the VPC. CIDR can be explicitly set or it can be derived from IPAM using ipv4_netmask_length"
   type        = string
-  default = "10.192.0.0/16"
+  default     = "10.192.0.0/16"
 }
 
 variable "PUBLIC_SUBNETS_CIDR_BLOCK_LIST_BASE_NETWORKING" {

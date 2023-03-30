@@ -351,6 +351,11 @@ variable "COGNITO_USER_ATTRIBUTES" {
   default     = {}
 }
 
+variable "COGNITO_USER_DESIRED_DELIVERY_MEDIUMS" {
+  description = "A list of mediums to the welcome message will be sent through. Allowed values are EMAIL and SMS. If it's provided, make sure you have also specified email attribute for the EMAIL medium and phone_number for the SMS. More than one value can be specified. Amazon Cognito does not store the desired_delivery_mediums value"
+  type        = list(string)
+  default     = []
+}
 ############################### TAGS VARIABLES #################################
 variable "TAGS_MODULE" {
   description = "Map of Tags"

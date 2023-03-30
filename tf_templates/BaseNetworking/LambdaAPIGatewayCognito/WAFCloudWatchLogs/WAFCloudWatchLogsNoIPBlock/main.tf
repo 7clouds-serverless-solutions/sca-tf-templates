@@ -132,11 +132,12 @@ module "cognito_user_and_group_association" {
   version    = "0.1.0"
   depends_on = [module.cognito_user_groups]
 
-  USER_POOL_ID    = module.cognito_user_pool.USER_POOL_ID
-  USER_NAME       = var.COGNITO_USERNAME
-  USER_PASSWORD   = var.COGNITO_USER_PASSWORD
-  GROUP_LIST      = var.COGNITO_GROUPS_TO_ASSOCIATE_USER_TO
-  USER_ATTRIBUTES = var.COGNITO_USER_ATTRIBUTES
+  USER_POOL_ID             = module.cognito_user_pool.USER_POOL_ID
+  USER_NAME                = var.COGNITO_USERNAME
+  USER_PASSWORD            = var.COGNITO_USER_PASSWORD
+  GROUP_LIST               = var.COGNITO_GROUPS_TO_ASSOCIATE_USER_TO
+  USER_ATTRIBUTES          = var.COGNITO_USER_ATTRIBUTES
+  DESIRED_DELIVERY_MEDIUMS = var.COGNITO_USER_DESIRED_DELIVERY_MEDIUMS
 }
 
 module "tags" {

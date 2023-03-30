@@ -97,9 +97,9 @@ API_GATEWAY_INTEGRATION_HTTP_METHOD_LAMBDA_API                        = "POST"
 API_GATEWAY_INTEGRATION_INPUT_TYPE_LAMBDA_API                         = "AWS_PROXY"
 LAMBDA_MANAGED_POLICIES_ARN_LIST                                      = ["arn:aws:iam::aws:policy/AmazonKinesisFirehoseFullAccess", "arn:aws:iam::aws:policy/SecretsManagerReadWrite", "arn:aws:iam::aws:policy/AmazonCognitoPowerUser"]
 AZ_COUNT_BASE_NETWORKING                                              = 2
-WAF_WEB_ACL_SCOPE_STANDARD            = "REGIONAL"
-WAF_SCOPE_CLOUDWATCH_METRICS_STANDARD = true
-WAF_SCOPE_SAMPLED_REQUESTS_STANDARD   = false
+WAF_WEB_ACL_SCOPE_STANDARD                                            = "REGIONAL"
+WAF_SCOPE_CLOUDWATCH_METRICS_STANDARD                                 = true
+WAF_SCOPE_SAMPLED_REQUESTS_STANDARD                                   = false
 RULES_WAF_STANDARD = [
   {
     name                                     = "AWSManagedRulesAmazonIpReputationList"
@@ -152,7 +152,7 @@ COGNITO_CLIENT_LOGOUT_URLS                   = ["https://localhost:5000/sign-out
 COGNITO_CLIENT_GENERATE_SECRET               = false
 COGNITO_CLIENT_EXPLICIT_AUTH_FLOWS           = ["ALLOW_ADMIN_USER_PASSWORD_AUTH", "ALLOW_REFRESH_TOKEN_AUTH"]
 COGNITO_ALLOWED_OAUTH_FLOWS_USER_POOL_CLIENT = true
-COGNITO_DOMAIN = "example-domain-testing"
+COGNITO_DOMAIN                               = "example-domain-testing"
 COGNITO_USER_GROUP_ATTRIBUTES_LIST = [
   {
     name        = "admin"

@@ -97,7 +97,7 @@ COGNITO_CLIENT_LOGOUT_URLS                   = ["https://localhost:5000/sign-out
 COGNITO_CLIENT_GENERATE_SECRET               = false
 COGNITO_CLIENT_EXPLICIT_AUTH_FLOWS           = ["ALLOW_ADMIN_USER_PASSWORD_AUTH", "ALLOW_REFRESH_TOKEN_AUTH"]
 COGNITO_ALLOWED_OAUTH_FLOWS_USER_POOL_CLIENT = true
-COGNITO_DOMAIN = "example-domain-testing"
+COGNITO_DOMAIN                               = "example-domain-testing"
 COGNITO_USER_GROUP_ATTRIBUTES_LIST = [
   {
     name        = "admin"
