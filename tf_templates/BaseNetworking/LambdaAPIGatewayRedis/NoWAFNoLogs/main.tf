@@ -79,7 +79,7 @@ module "lambda_api_gateway" {
   MEMORY_SIZE                         = var.MEMORY_SIZE_LAMBDA_API
   TIMEOUT                             = var.TIMEOUT_LAMBDA_API
   HANDLER                             = var.HANDLER_LAMBDA_API
-  ENVIRONMENT_VARIABLES               = merge({ content_bucket = module.content_management_bucket.CONTENT_BUCKET, redis_host = module.elasticache_redis.ELASTICACHE_NODE_ADDRESS, redis_port = module.elasticache_redis.ELASTICACHE_NODE_PORT_NUMBER }, var.ENVIRONMENT_VARIABLES_LAMBDA_API)
+  ENVIRONMENT_VARIABLES               = merge({ content_bucket = module.content_management_bucket.CONTENT_BUCKET, redis_host = module.elasticache_redis.ELASTICACHE_NODE_ADDRESS[0], redis_port = module.elasticache_redis.ELASTICACHE_NODE_PORT_NUMBER[0] }, var.ENVIRONMENT_VARIABLES_LAMBDA_API)
   MANAGED_POLICY_ARNS                 = concat([module.cloudwatch_disable_policy.IAM_POLICY_ARN, module.content_bucket_allow_policy.IAM_POLICY_ARN], var.LAMBDA_MANAGED_POLICIES_ARN_LIST)
   API_GATEWAY_METHOD_AUTHORIZATION    = var.API_GATEWAY_METHOD_AUTHORIZATION_LAMBDA_API
   API_GATEWAY_METHOD_HTTP_METHOD      = var.API_GATEWAY_METHOD_HTTP_METHOD_LAMBDA_API
