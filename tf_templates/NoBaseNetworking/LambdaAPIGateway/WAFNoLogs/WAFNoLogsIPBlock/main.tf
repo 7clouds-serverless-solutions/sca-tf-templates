@@ -32,7 +32,7 @@ module "content_bucket_allow_policy" {
 
 module "content_management_bucket" {
   source  = "7clouds-terraform-modules/s3-bucket/aws"
-  version = "0.1.1"
+  version = "0.1.2"
 
   PROJECT_NAME                         = module.tags.PROJECT_NAME
   CREATE_BUCKET                        = var.CREATE_CONTENT_MANAGEMENT_BUCKET
