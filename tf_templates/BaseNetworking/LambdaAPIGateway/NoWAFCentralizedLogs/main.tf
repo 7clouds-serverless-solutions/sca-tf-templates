@@ -86,7 +86,7 @@ module "logs_bucket" {
 
 module "centralized_logs" {
   source     = "7clouds-terraform-modules/lambda-centralized-logs/aws"
-  version    = "0.1.1"
+  version    = "0.1.2"
   depends_on = [module.logs_bucket]
 
   PROJECT_NAME                                         = module.tags.PROJECT_NAME
