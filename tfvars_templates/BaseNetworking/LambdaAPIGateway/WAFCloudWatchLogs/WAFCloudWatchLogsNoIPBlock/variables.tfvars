@@ -1,4 +1,4 @@
-COMPATIBLE_RUNTIMES_DEPENDENCIES_LAYER            = "python3.8"
+COMPATIBLE_RUNTIMES_DEPENDENCIES_LAYER            = "python3.11"
 LAYER_NAME_DEPENDENCIES_LAYER                     = "TestProjectDependenciesLayer"
 DESCRIPTION_DEPENDENCIES_LAYER                    = "Python Flask Dependencies for a Simple API"
 FILENAME_DEPENDENCIES_LAYER                       = "YOUR_PATH_HERE"
@@ -26,7 +26,7 @@ CONTENT_MANAGEMENT_BUCKET_VERSIONING = {
   status     = "Enabled"
 }
 API_GATEWAY_RESOURCE_PATH_LAMBDA_API           = "{proxy+}"
-COMPATIBLE_RUNTIMES_LAMBDA_API                 = "python3.8"
+COMPATIBLE_RUNTIMES_LAMBDA_API                 = "python3.11"
 LAMBDA_CODE_ZIP_FILE_LAMBDA_API                = "YOUR_PATH_HERE"
 WARMUP_ENABLED_LAMBDA_API                      = true
 LAMBDA_WARMUP_SCHEDULE_EXPRESSION_LAMBDA_API   = "rate(5 minutes)"
