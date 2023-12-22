@@ -19,6 +19,7 @@ module "dependencies_layer" {
   LAYER_NAME          = var.LAYER_NAME_DEPENDENCIES_LAYER
   DESCRIPTION         = var.DESCRIPTION_DEPENDENCIES_LAYER
   FILENAME            = var.FILENAME_DEPENDENCIES_LAYER
+  SOURCE_CODE_HASH    = filebase64sha256(var.FILENAME_DEPENDENCIES_LAYER)
 }
 
 module "content_bucket_allow_policy" {
