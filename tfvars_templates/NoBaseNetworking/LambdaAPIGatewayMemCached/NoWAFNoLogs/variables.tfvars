@@ -100,7 +100,7 @@ COGNITO_USER_GROUP_ATTRIBUTES_LIST = [
 
 COGNITO_USERNAME                    = "admin"
 COGNITO_USER_PASSWORD               = "yourpasshere"
-COGNITO_GROUPS_TO_ASSOCIATE_USER_TO = ["admin", "write", "read"]
+COGNITO_GROUPS_TO_ASSOCIATE_USER_TO = ["admin", "write", "read", "delete"]
 
 
 TAGS_MODULE = {
