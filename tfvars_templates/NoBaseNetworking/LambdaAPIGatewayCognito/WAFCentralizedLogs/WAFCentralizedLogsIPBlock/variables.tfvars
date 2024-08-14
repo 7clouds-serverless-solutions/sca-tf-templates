@@ -178,6 +178,12 @@ COGNITO_USER_GROUP_ATTRIBUTES_LIST = [
     precedence  = 2
     role_arn    = null
   },
+  {
+    name        = "delete"
+    description = null
+    precedence  = 3
+    role_arn    = null
+  },
 ]
 
 COGNITO_USERNAME                    = "your_user_here"
