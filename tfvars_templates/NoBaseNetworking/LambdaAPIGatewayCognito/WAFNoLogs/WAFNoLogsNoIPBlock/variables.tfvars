@@ -135,7 +135,7 @@ COGNITO_USER_PASSWORD               = "your_password_here"
 COGNITO_GROUPS_TO_ASSOCIATE_USER_TO = ["admin", "write", "read", "delete"]
 
 TAGS_MODULE = {
-  AWS_REGION      = "us-east-1"
+  AWS_REGION      = "***"
   PROJECT_NAME    = "ExampleProject"
   ENVIRONMENT     = "DEV"
   COMPANY         = "CompanyName"

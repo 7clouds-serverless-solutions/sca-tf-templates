@@ -72,7 +72,7 @@ RULES_WAF_STANDARD = [
 ]
 AZ_COUNT_BASE_NETWORKING = 2
 TAGS_MODULE = {
-  AWS_REGION      = "us-east-1"
+  AWS_REGION      = "***"
   PROJECT_NAME    = "ExampleProject"
   ENVIRONMENT     = "DEV"
   COMPANY         = "CompanyName"

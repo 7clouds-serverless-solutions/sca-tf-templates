@@ -72,7 +72,7 @@ RULES_WAF_IP_BLOCK = [
   }
 ]
 TAGS_MODULE = {
-  AWS_REGION      = "us-west-1"
+  AWS_REGION      = "***"
   PROJECT_NAME    = "ExampleProject"
   ENVIRONMENT     = "DEV"
   COMPANY         = "CompanyName"

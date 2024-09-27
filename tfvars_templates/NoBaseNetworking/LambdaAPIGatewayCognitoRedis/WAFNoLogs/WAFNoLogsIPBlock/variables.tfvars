@@ -145,7 +145,7 @@ ELASTICACHE_CLUSTER_NUM_CACHE_NODES = 1
 ELASTICACHE_CLUSTER_PORT_NUMBER     = 6379
 
 TAGS_MODULE = {
-  AWS_REGION      = "us-east-1"
+  AWS_REGION      = "***"
   PROJECT_NAME    = "ExampleProject"
   ENVIRONMENT     = "DEV"
   COMPANY         = "CompanyName"

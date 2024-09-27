@@ -68,7 +68,7 @@ RULES_WAF_STANDARD = [
   }
 ]
 TAGS_MODULE = {
-  AWS_REGION      = "us-west-1"
+  AWS_REGION      = "***"
   PROJECT_NAME    = "ExampleProject"
   ENVIRONMENT     = "DEV"
   COMPANY         = "CompanyName"
