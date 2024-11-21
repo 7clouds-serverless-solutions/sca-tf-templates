@@ -77,7 +77,7 @@ module "lambda_api_gateway" {
 
 module "tags" {
   source  = "7clouds-terraform-modules/tags/aws"
-  version = "0.1.0"
+  version = "0.1.1"
 
   AWS_REGION      = var.TAGS_MODULE.AWS_REGION
   PROJECT_NAME    = var.TAGS_MODULE.PROJECT_NAME
@@ -87,4 +87,5 @@ module "tags" {
   PROJECT_TYPE    = var.TAGS_MODULE.PROJECT_TYPE
   PROJECT_VERSION = var.TAGS_MODULE.PROJECT_VERSION
   LOB             = var.TAGS_MODULE.LOB
+  APP_ID          = var.TAGS_MODULE.APP_ID
 }

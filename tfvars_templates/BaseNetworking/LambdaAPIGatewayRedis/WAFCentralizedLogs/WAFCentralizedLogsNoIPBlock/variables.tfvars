@@ -140,4 +140,5 @@ TAGS_MODULE = {
   PROJECT_TYPE    = "Serverless"
   PROJECT_VERSION = "v0.1.0"
   LOB             = "Large Accounts"
+  APP_ID          = "TASK-1005"
 }
