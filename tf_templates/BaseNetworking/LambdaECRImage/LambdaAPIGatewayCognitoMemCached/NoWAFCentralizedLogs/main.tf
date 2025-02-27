@@ -103,7 +103,7 @@ module "centralized_logs" {
 
 module "lambda_ecr_api_gateway" {
   source = "7clouds-terraform-modules/lambda-ecr-api-gateway/aws"
-  version = "0.1.0"
+  version = "0.1.1"
 
   PROJECT_NAME                        = var.TAGS_MODULE.PROJECT_NAME
   ENVIRONMENT                         = var.TAGS_MODULE.ENVIRONMENT
